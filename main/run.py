@@ -5,15 +5,14 @@ Created on Aug 20, 2016
 '''
 import os
 from guessit import guessit
-from cinephile import get_movie_info 
 from imdbpie import Imdb
-imdb = Imdb()
-# imdb = Imdb(anonymize=True) # to proxy requests
+# imdb = Imdb()
+imdb = Imdb(anonymize=True) # to proxy requests
 if __name__ == '__main__':
     #----guessit format
     count = 1
     # traverse root directory, and list directories as dirs and files as files
-    for root, dirs, files in os.walk("G:/Personal/Motion Picture"):
+    for root, dirs, files in os.walk("F:/Torrent"):
 #         path = root.split('/')
 #         print((len(path) - 1) * '---', os.path.basename(root))
         for f in files:
@@ -24,7 +23,7 @@ if __name__ == '__main__':
                 if title:
                     print imdb.search_for_title(title)
         count = count +1
-        if count ==10:
-            break
+#         if count ==10:
+#             break
 
 #     print cinephile.get_movies_set("G:/Personal/Motion Picture")       
